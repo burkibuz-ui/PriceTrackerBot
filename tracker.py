@@ -23,7 +23,7 @@ def fiyati_kontrol_et():
         if cevap.status_code == 200:
             soup = BeautifulSoup(cevap.text, "html.parser")
             
-            # --- NOKTA ATIŞI: Senin terminal çıktındaki 'price' sınıfını kullanıyoruz ---
+            
             fiyat_elementi = soup.find(class_="price")
             
             if fiyat_elementi:
@@ -39,7 +39,7 @@ def fiyati_kontrol_et():
 
                 if guncel_fiyat < HEDEF_FIYAT:
                     print("🚀 Hedef fiyata ulaşıldı! Mesaj gönderiliyor...")
-                    mesaj_gonder(f"🔥 KANKA FIRSAT! Şeker Portakalı şu an {guncel_fiyat} TL!\nLink: {URL}")
+                    mesaj_gonder(f"🔥 BRO FIRSAT! Şeker Portakalı şu an {guncel_fiyat} TL!\nLink: {URL}")
                     return True
                 else:
                     print("⏳ Fiyat henüz düşmemiş.")
